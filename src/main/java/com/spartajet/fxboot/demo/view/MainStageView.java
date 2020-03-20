@@ -10,4 +10,5 @@ import de.felixroske.jfxsupport.FXMLView;
  */
 @FXMLView(value = "/view/MainStage.fxml")
 public class MainStageView extends AbstractFxmlView {
+
 }

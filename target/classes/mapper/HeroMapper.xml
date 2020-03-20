@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spartajet.fxboot.demo.dao.HeroMapper">
+    <select id="selectHero" resultType="hero" >
+        SELECT *
+        from hero
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertHero" parameterType="hero">
+        insert into hero(id,name,hp,damage)
+        values (#{id},#{name},#{hp},#{damage})
+    </insert>
+
+    <update id="updateHeroDamage" parameterType="int">
+        update hero
+        set damage = #{damage}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteHero" parameterType="int">
+        delete from hero
+        where id = #{id}
+    </delete>
+
+
+</mapper>

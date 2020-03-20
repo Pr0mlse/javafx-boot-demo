@@ -3,6 +3,7 @@ package com.spartajet.fxboot.demo;
 import com.spartajet.fxboot.demo.view.MainStageView;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.stage.Stage;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
