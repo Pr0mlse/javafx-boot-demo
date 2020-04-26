@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.invoicing.dao.VendorItemMapper">
+
+    <select id="selectByVendId" resultType="VendorItem" >
+        SELECT *
+        from vendoritem
+        WHERE vend_id = #{vendId}
+        order by vend_num asc
+    </select>
+
+    <insert id="insertVendorItem" parameterType="java.util.List" >
+        insert into vendoritem(vend_id, vend_num, id, vend_univalence, vend_count)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.vendId},
+            #{item.vendNum},
+            #{item.id},
+            #{item.vendUnivalence},
+            #{item.vendCount}
+            )
+        </foreach>
+    </insert>
+
+
+    <select id="selectCommodityByVendId" resultType="Commodity" >
+        SELECT *
+        from vendoritem natural join commodity
+        WHERE vend_id = #{vendId}
+        order by vend_num asc
+    </select>
+
+
+</mapper>

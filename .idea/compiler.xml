@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javafx-boot-demo" />
+        <module name="invoicing-management-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="javafx-boot-demo" target="1.5" />
+      <module name="invoicing-management-system" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

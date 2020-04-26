@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.invoicing.dao.OrderItemMapper">
+
+    <select id="selectByOrderId" resultType="OrderItem" >
+        SELECT *
+        from orderitem
+        WHERE order_id = #{orderId}
+        order by order_num asc
+    </select>
+
+    <insert id="insertOrderItem" parameterType="java.util.List" >
+        insert into orderitem(order_id, order_num, id, order_univalence, order_count)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.orderId},
+            #{item.orderNum},
+            #{item.id},
+            #{item.orderUnivalence},
+            #{item.orderCount}
+            )
+        </foreach>
+    </insert>
+
+    <select id="selectCommodityByOrderId" resultType="Commodity" >
+        SELECT *
+        from orderitem natural join commodity
+        WHERE order_id = #{orderId}
+        order by order_num asc
+    </select>
+
+</mapper>

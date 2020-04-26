@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.invoicing.dao.CommodityMapper">
+
+    <sql id="selectFields">
+        id, name, type_id, stock, alert, price, discount
+    </sql>
+
+
+    <select id="selectById" resultType="Commodity" >
+        select <include refid="selectFields"></include>
+        from commodity
+        where id = #{id}
+    </select>
+
+    <select id="selectByName" resultType="Commodity" >
+        select <include refid="selectFields"></include>
+        from commodity
+        where name = #{name}
+    </select>
+
+    <select id="selectAll" resultType="Commodity" >
+        select <include refid="selectFields"></include>
+        from commodity
+        order by id asc
+    </select>
+
+    <insert id="insertCommodity" parameterType="Commodity" keyProperty="id">
+        insert into commodity(name, type_id, stock, alert, price, discount)
+        values (#{name},#{typeId},#{stock},#{alert},#{price},#{discount})
+    </insert>
+
+    <update id="updateName">
+        update commodity set name = #{name}
+        where id = #{id}
+    </update>
+
+    <update id="updateTypeId">
+        update commodity set type_id = #{typeId}
+        where id = #{id}
+    </update>
+
+    <update id="updateStock">
+        update commodity set stock = #{stock}
+        where id = #{id}
+    </update>
+
+    <update id="updateAlert">
+        update commodity set alert = #{alert}
+        where id = #{id}
+    </update>
+
+    <update id="updatePrice">
+        update commodity set price = #{price}
+        where id = #{id}
+    </update>
+
+    <update id="updateDiscount">
+        update commodity set discount = #{discount}
+        where id = #{id}
+    </update>
+
+</mapper>

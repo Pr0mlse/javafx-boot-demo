@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/javafx-boot-demo.iml" filepath="$PROJECT_DIR$/javafx-boot-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/invoicing-management-system.iml" filepath="$PROJECT_DIR$/invoicing-management-system.iml" />
     </modules>
   </component>
 </project>

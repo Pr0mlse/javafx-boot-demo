@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.invoicing.dao.TypeMapper">
+    <select id="selectByName" resultType="Type" >
+        SELECT *
+        from type
+        WHERE type_name = #{typeName}
+    </select>
+
+    <insert id="insertType" parameterType="Type" keyProperty="typeId">
+        insert into type(type_name)
+        values (#{typeName})
+    </insert>
+
+</mapper>

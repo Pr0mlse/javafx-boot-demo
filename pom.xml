@@ -69,6 +69,7 @@
             <scope>test</scope>
         </dependency>
 
+
     </dependencies>
 
     
@@ -82,7 +83,7 @@
 <!--                <groupId>com.zenjava</groupId>-->
 <!--                <artifactId>javafx-maven-plugin</artifactId>-->
 <!--                <configuration>-->
-<!--                    <mainClass>com.spartajet.fxboot.demo.MainController</mainClass>-->
+<!--                    <mainClass>MainController</mainClass>-->
 <!--                    <vendor>Spartajet</vendor>-->
 <!--                </configuration>-->
 <!--            </plugin>-->

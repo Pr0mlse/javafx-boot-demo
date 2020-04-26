@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.invoicing.dao.OrderMapper">
+
+    <select id="selectById" resultType="Order" >
+        SELECT *
+        from orders
+        WHERE order_id = #{orderId}
+    </select>
+
+    <select id="selectRecent" resultType="Order" >
+        SELECT *
+        FROM orders
+        ORDER BY order_id DESC LIMIT 1;
+    </select>
+
+    <insert id="insertOrder" parameterType="Order" keyProperty="orderId">
+        insert into orders(order_time, order_price)
+        values (#{orderTime}, #{orderPrice})
+    </insert>
+
+</mapper>
